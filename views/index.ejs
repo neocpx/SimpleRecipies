@@ -1,0 +1,24 @@
+<div class="author">
+    <h1 class="author_heading">Hi, I am Clopx</h1>
+    <p class="author_body">Ret.</p>
+</div>
+<img src="/images/banner.jpg" alt="nothing much" class="rImg" width="981" height="528">
+
+<section class="article">
+    <h2 class="art_heading">Posts</h2>
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+         
+        <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="art_date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+
+        <% }) %>
+    </ul>
+    <% if (nextPage!=null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">View Older</a>
+    <% } %>
+</section>
